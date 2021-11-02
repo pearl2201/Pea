@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/pearl2201/dev/side/Pea/Pea.Core/Pea.Core.csproj": {}
+    "F:\\Ann\\Dev\\Pea\\Pea\\Pea.Core\\Pea.Core.csproj": {}
   },
   "projects": {
-    "/home/pearl2201/dev/side/Pea/Pea.Core/Pea.Core.csproj": {
+    "F:\\Ann\\Dev\\Pea\\Pea\\Pea.Core\\Pea.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pearl2201/dev/side/Pea/Pea.Core/Pea.Core.csproj",
+        "projectUniqueName": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.Core\\Pea.Core.csproj",
         "projectName": "Pea.Core",
-        "projectPath": "/home/pearl2201/dev/side/Pea/Pea.Core/Pea.Core.csproj",
-        "packagesPath": "/home/pearl2201/.nuget/packages/",
-        "outputPath": "/home/pearl2201/dev/side/Pea/Pea.Core/obj/",
+        "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.Core\\Pea.Core.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/pearl2201/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

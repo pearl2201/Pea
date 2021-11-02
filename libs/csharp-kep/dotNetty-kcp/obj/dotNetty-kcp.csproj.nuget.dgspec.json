@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/king/Documents/workspace/github/csharp-kcp/dotNetty-kcp/dotNetty-kcp.csproj": {}
+    "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {}
   },
   "projects": {
-    "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/base-kcp.csproj": {
+    "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/base-kcp.csproj",
+        "projectUniqueName": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "projectName": "base-kcp",
-        "projectPath": "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/base-kcp.csproj",
-        "packagesPath": "/Users/king/.nuget/packages/",
-        "outputPath": "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/obj/",
+        "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/king/.config/NuGet/NuGet.Config"
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -34,16 +37,17 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "DotNetty.Buffers": {
               "target": "Package",
               "version": "[0.6.0, )"
             },
-            "Microsoft.NETCore.App": {
+            "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )",
+              "version": "[2.0.3, )",
               "autoReferenced": true
             }
           },
@@ -57,33 +61,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/king/Documents/workspace/github/csharp-kcp/dotNetty-kcp/dotNetty-kcp.csproj": {
+    "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/king/Documents/workspace/github/csharp-kcp/dotNetty-kcp/dotNetty-kcp.csproj",
+        "projectUniqueName": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
         "projectName": "dotNetty-kcp",
-        "projectPath": "/Users/king/Documents/workspace/github/csharp-kcp/dotNetty-kcp/dotNetty-kcp.csproj",
-        "packagesPath": "/Users/king/.nuget/packages/",
-        "outputPath": "/Users/king/Documents/workspace/github/csharp-kcp/dotNetty-kcp/obj/",
+        "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/king/.config/NuGet/NuGet.Config"
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/base-kcp.csproj": {
-                "projectPath": "/Users/king/Documents/workspace/github/csharp-kcp/base-kcp/base-kcp.csproj"
+              "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+                "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj"
               }
             }
           }
@@ -95,7 +102,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "DotNetty.Codecs": {
               "target": "Package",
@@ -113,10 +121,10 @@
               "target": "Package",
               "version": "[0.6.0, )"
             },
-            "Microsoft.NETCore.App": {
+            "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )",
+              "version": "[2.0.3, )",
               "autoReferenced": true
             }
           },
@@ -130,7 +138,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
