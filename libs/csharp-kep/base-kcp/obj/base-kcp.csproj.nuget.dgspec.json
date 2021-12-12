@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {}
+    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {}
   },
   "projects": {
-    "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "projectName": "base-kcp",
-        "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "F:\\Ann\\Dev\\Pea\\Pea\\libs\\csharp-kep\\base-kcp\\obj\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

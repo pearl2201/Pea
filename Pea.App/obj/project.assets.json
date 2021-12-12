@@ -1175,11 +1175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.App\\Pea.App.csproj",
+      "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.App\\Pea.App.csproj",
       "projectName": "Pea.App",
-      "projectPath": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.App\\Pea.App.csproj",
+      "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.App\\Pea.App.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "F:\\Ann\\Dev\\Pea\\Pea\\Pea.App\\obj\\",
+      "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1228,7 +1228,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
