@@ -1,4 +1,5 @@
 ﻿using MessagePack;
+using Pea.Networking.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Pea.Networking
             OpCode = opCode;
             Peer = peer;
             _data = data;
-        
+
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Pea.Networking
         /// <param name="statusCode"></param>
         public void Respond(byte[] data, ResponseStatus statusCode = ResponseStatus.Default)
         {
-            Respond(MessageHelper.Create(OpCode, data), statusCode);
+            Respond(new Message(OpCode, data), statusCode);
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Pea.Networking
         /// <param name="statusCode"></param>
         public void Respond(ISerializablePacket packet, ResponseStatus statusCode = ResponseStatus.Default)
         {
-            Respond(MessageHelper.Create(OpCode, packet.ToBytes()), statusCode);
+            Respond(new Message(OpCode, packet.ToBytes()), statusCode);
         }
 
         /// <summary>
@@ -107,17 +108,17 @@ namespace Pea.Networking
         /// <param name="statusCode"></param>
         public void Respond(ResponseStatus statusCode = ResponseStatus.Default)
         {
-            Respond(MessageHelper.Create(OpCode), statusCode);
+            Respond(new Message(OpCode), statusCode);
         }
 
         public void Respond(string message, ResponseStatus statusCode = ResponseStatus.Default)
         {
-            Respond(message.ToBytes(), statusCode);
+            Respond(new Message(OpCode, MessagePackSerializer.Serialize(message)), statusCode);
         }
 
         public void Respond(int response, ResponseStatus statusCode = ResponseStatus.Default)
         {
-            Respond(MessageHelper.Create(OpCode, response), statusCode);
+            Respond(new Message(OpCode, MessagePackSerializer.Serialize(response)), statusCode);
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Pea.Networking
 
         public override string ToString()
         {
-            return AsString(base.ToString());
+            return base.ToString();
         }
     }
 }

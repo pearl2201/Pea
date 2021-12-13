@@ -8,7 +8,7 @@ namespace Pea.Core.Server
 {
     public class ServerModuleBehaviour : IServerModule
     {
-        private static Dictionary<Type, GameObject> _instances;
+        //private static Dictionary<Type, GameObject> _instances;
 
         private readonly List<Type> _dependencies = new List<Type>();
         private readonly List<Type> _optionalDependencies = new List<Type>();
@@ -51,31 +51,31 @@ namespace Pea.Core.Server
             _optionalDependencies.Add(typeof(T));
         }
 
-        /// <summary>
-        /// Returns true, if module should be destroyed
-        /// </summary>
-        /// <returns></returns>
-        protected bool DestroyIfExists()
-        {
-            if (_instances == null)
-                _instances = new Dictionary<Type, GameObject>();
+        ///// <summary>
+        ///// Returns true, if module should be destroyed
+        ///// </summary>
+        ///// <returns></returns>
+        //protected bool DestroyIfExists()
+        //{
+        //    if (_instances == null)
+        //        _instances = new Dictionary<Type, GameObject>();
 
-            if (_instances.ContainsKey(GetType()))
-            {
-                if (_instances[GetType()] != null)
-                {
-                    // Module hasn't been destroyed
-                    Destroy(gameObject);
-                    return true;
-                }
+        //    if (_instances.ContainsKey(GetType()))
+        //    {
+        //        if (_instances[GetType()] != null)
+        //        {
+        //            // Module hasn't been destroyed
+        //            Destroy(gameObject);
+        //            return true;
+        //        }
 
-                // Remove an old module, which has been destroyed previously
-                // (probably automatically when changing a scene)
-                _instances.Remove(GetType());
-            }
+        //        // Remove an old module, which has been destroyed previously
+        //        // (probably automatically when changing a scene)
+        //        _instances.Remove(GetType());
+        //    }
 
-            _instances.Add(GetType(), gameObject);
-            return false;
-        }
+        //    _instances.Add(GetType(), gameObject);
+        //    return false;
+        //}
     }
 }

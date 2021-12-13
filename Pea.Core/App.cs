@@ -9,10 +9,10 @@ namespace Pea.Core.Modules
     public class App
     {
 
-        public void RegisterModule(IModule module)
-        {
+        //public void RegisterModule(IModule module)
+        //{
 
-        }
+        //}
 
         public void Init()
         {

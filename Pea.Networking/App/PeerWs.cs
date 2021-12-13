@@ -1,7 +1,6 @@
 ﻿using Coldairarrow.DotNettySocket;
+using MessagePack;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Pea.Networking.App
 {
@@ -9,17 +8,29 @@ namespace Pea.Networking.App
     {
         private readonly ServerSocketWs _transport;
         private readonly IWebSocketConnection _connection;
+        private bool _connected;
 
         public PeerWs(ServerSocketWs transport, IWebSocketConnection connection) : base()
         {
             _transport = transport;
             _connection = connection;
+            _connected = true;
         }
-        public override bool IsConnected => throw new NotImplementedException();
-
-        public override void SendMessage(IMessage message, DeliveryMethod deliveryMethod)
+        public override bool IsConnected
         {
-            var msg = message.ToString();
+            get { return _connected; }
+
+        }
+
+        public void SetConnectionState(bool connected)
+        {
+            _connected = connected;
+        }
+
+        public override void SendMessage(IMessage message)
+        {
+            byte[] bytes = MessagePackSerializer.Serialize(message);
+            var msg = MessagePackSerializer.ConvertToJson(bytes);
             _connection.Send(msg);
         }
 
@@ -28,13 +39,17 @@ namespace Pea.Networking.App
             _connection.Close();
         }
 
-        public void HandleDataReceived(string message)
+        public void HandleDataReceived(string content)
         {
             IIncommingMessage message = null;
 
             try
             {
-                message = MessageHelper.FromBytes(buffer, start, this);
+
+
+                var bytes = MessagePackSerializer.ConvertFromJson(content);
+
+                message = MessagePackSerializer.Deserialize<IIncommingMessage>(bytes);
 
                 if (message.AckRequestId.HasValue)
                 {
@@ -50,12 +65,14 @@ namespace Pea.Networking.App
                     throw e;
 #endif
 
-                Log.Error("Failed parsing an incomming message: " + e);
+                Serilog.Log.Error("Failed parsing an incomming message: " + e);
 
                 return;
             }
 
             HandleMessage(message);
         }
+
+
     }
 }

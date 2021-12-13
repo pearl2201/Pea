@@ -13,44 +13,45 @@ namespace Pea.Networking
         public event PeerActionHandler Disconnected;
         public event PeerActionHandler OnDisconnected;
 
-        
+        private IWebSocketServer theServer;
         public async Task Listen(int port)
         {
-            var theServer = await SocketBuilderFactory.GetWebSocketServerBuilder(port)
-                .OnConnectionClose((server, connection) =>
-                {
-                    Console.WriteLine($"连接关闭,连接名[{connection.ConnectionName}],当前连接数:{server.GetConnectionCount()}");
-                })
-                .OnException(ex =>
-                {
-                    Console.WriteLine($"服务端异常:{ex.Message}");
-                })
-                .OnNewConnection((server, connection) =>
-                {
-                    connection.ConnectionName = $"名字{connection.ConnectionId}";
-                    Console.WriteLine($"新的连接:{connection.ConnectionName},当前连接数:{server.GetConnectionCount()}");
-                })
-                .OnRecieve((server, connection, msg) =>
-                {
-                    Console.WriteLine($"服务端:数据{msg}");
-                    connection.Send(msg);
-                })
-                .OnSend((server, connection, msg) =>
-                {
-                    Console.WriteLine($"向连接名[{connection.ConnectionName}]发送数据:{msg}");
-                })
-                .OnServerStarted(server =>
-                {
-                    Console.WriteLine($"服务启动");
-                }).BuildAsync();
+            theServer = await SocketBuilderFactory.GetWebSocketServerBuilder(port)
+               .OnConnectionClose((server, connection) =>
+               {
+                   Console.WriteLine($"连接关闭,连接名[{connection.ConnectionName}],当前连接数:{server.GetConnectionCount()}");
+               })
+               .OnException(ex =>
+               {
+                   Console.WriteLine($"服务端异常:{ex.Message}");
+               })
+               .OnNewConnection((server, connection) =>
+               {
+                   connection.ConnectionName = $"名字{connection.ConnectionId}";
+                   Console.WriteLine($"新的连接:{connection.ConnectionName},当前连接数:{server.GetConnectionCount()}");
+               })
+               .OnRecieve((server, connection, msg) =>
+               {
+                   Console.WriteLine($"服务端:数据{msg}");
+                   connection.Send(msg);
+               })
+               .OnSend((server, connection, msg) =>
+               {
+                   Console.WriteLine($"向连接名[{connection.ConnectionName}]发送数据:{msg}");
+               })
+               .OnServerStarted(server =>
+               {
+                   Console.WriteLine($"服务启动");
+               }).BuildAsync();
 
             Console.ReadLine();
         }
 
-        
-        public async Task Stop()
+
+        public Task Stop()
         {
-            throw new NotImplementedException();
+            theServer.Close();
+            return Task.CompletedTask;
         }
     }
 }

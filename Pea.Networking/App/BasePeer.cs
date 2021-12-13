@@ -1,6 +1,8 @@
 ﻿using Serilog;
 using System;
 using System.Collections.Generic;
+using Pea.Networking.Messages;
+using MessagePack;
 
 namespace Pea.Networking
 {
@@ -44,7 +46,7 @@ namespace Pea.Networking
 
             BTimer.Instance.OnTick += HandleAckDisposalTick;
 
-            _timeoutMessage = new IncommingMessage(-1, 0, "Time out".ToBytes()  this)
+            _timeoutMessage = new IncommingMessage(-1, 0, MessagePackSerializer.Serialize("Time out"), this)
             {
                 Status = ResponseStatus.Timeout
             };
@@ -63,80 +65,80 @@ namespace Pea.Networking
 
         public void SendMessage(short opCode)
         {
-            SendMessage(MessageHelper.Create(opCode));
+            SendMessage(new Message(opCode));
         }
 
         public void SendMessage(short opCode, ISerializablePacket packet)
         {
-            SendMessage(MessageHelper.Create(opCode, packet));
+            SendMessage(new Message(opCode, packet.ToBytes()));
         }
 
 
         public void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback)
         {
-            var message = MessageHelper.Create(opCode, packet.ToBytes());
+            var message = new Message(opCode, packet.ToBytes());
             SendMessage(message, responseCallback);
         }
 
         public void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var message = MessageHelper.Create(opCode, packet.ToBytes());
+            var message = new Message(opCode, packet.ToBytes());
             SendMessage(message, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(short opCode, ResponseCallback responseCallback)
         {
-            SendMessage(MessageHelper.Create(opCode), responseCallback);
+            SendMessage(new Message(opCode), responseCallback);
         }
 
         public void SendMessage(short opCode, byte[] data)
         {
-            SendMessage(MessageHelper.Create(opCode, data));
+            SendMessage(new Message(opCode, data));
         }
 
         public void SendMessage(short opCode, byte[] data, ResponseCallback ackCallback)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, data);
             SendMessage(message, ackCallback);
         }
 
         public void SendMessage(short opCode, byte[] data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, data);
             SendMessage(message, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(short opCode, string data)
         {
-            SendMessage(MessageHelper.Create(opCode, data));
+            SendMessage(new Message(opCode, MessagePackSerializer.Serialize(data)));
         }
 
         public void SendMessage(short opCode, string data, ResponseCallback responseCallback)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, MessagePackSerializer.Serialize(data));
             SendMessage(message, responseCallback);
         }
 
         public void SendMessage(short opCode, string data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, MessagePackSerializer.Serialize(data));
             SendMessage(message, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(short opCode, int data)
         {
-            SendMessage(MessageHelper.Create(opCode, data));
+            SendMessage(new Message(opCode, MessagePackSerializer.Serialize(data)));
         }
 
         public void SendMessage(short opCode, int data, ResponseCallback responseCallback)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, MessagePackSerializer.Serialize(data));
             SendMessage(message, responseCallback);
         }
 
         public void SendMessage(short opCode, int data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var message = MessageHelper.Create(opCode, data);
+            var message = new Message(opCode, MessagePackSerializer.Serialize(data));
             SendMessage(message, responseCallback, timeoutSecs);
         }
 
@@ -203,7 +205,7 @@ namespace Pea.Networking
             if (extension == null)
                 return default(T);
 
-            return (T) extension;
+            return (T)extension;
         }
 
         public bool HasExtension<T>()
@@ -316,7 +318,7 @@ namespace Pea.Networking
         private void StartAckTimeout(int ackId, int timeoutSecs)
         {
             // +1, because it might be about to tick in a few miliseconds
-            _ackTimeoutQueue.Add(new[] {ackId, BTimer.CurrentTick + timeoutSecs + 1});
+            _ackTimeoutQueue.Add(new[] { ackId, BTimer.CurrentTick + timeoutSecs + 1 });
         }
 
         public virtual void HandleMessage(IIncommingMessage message)
@@ -358,11 +360,11 @@ namespace Pea.Networking
 
                 try
                 {
-                    CancelAck((int) a[0], ResponseStatus.Timeout);
+                    CancelAck((int)a[0], ResponseStatus.Timeout);
                 }
                 catch (Exception e)
                 {
-                    Logs.Error(e);
+                    Log.Error("Exception: {e}", e);
                 }
 
                 return true;

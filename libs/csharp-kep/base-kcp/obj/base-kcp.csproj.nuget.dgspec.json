@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {}
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {}
   },
   "projects": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "projectName": "base-kcp",
-        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\obj\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,7 +42,7 @@
           "dependencies": {
             "DotNetty.Buffers": {
               "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.7.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

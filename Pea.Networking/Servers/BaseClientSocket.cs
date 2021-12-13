@@ -1,4 +1,6 @@
-﻿namespace Pea.Networking
+﻿using MessagePack;
+
+namespace Pea.Networking
 {
     public class BaseClientSocket : IMsgDispatcher
     {
@@ -6,117 +8,88 @@
 
         public void SendMessage(short opCode)
         {
-            var msg = MessageHelper.Create(opCode);
+            var msg = new Message(opCode);
             SendMessage(msg);
         }
 
         public void SendMessage(short opCode, ISerializablePacket packet)
         {
-            SendMessage(opCode, packet, DeliveryMethod.Reliable);
-        }
-
-        public void SendMessage(short opCode, ISerializablePacket packet, DeliveryMethod method)
-        {
-            var msg = MessageHelper.Create(opCode, packet.ToBytes());
-            Peer.SendMessage(msg, method);
+            SendMessage(opCode, packet);
         }
 
         public void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback)
         {
-            var msg = MessageHelper.Create(opCode, packet.ToBytes());
+            var msg = new Message(opCode, packet.ToBytes());
             Peer.SendMessage(msg, responseCallback);
         }
 
         public void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var msg = MessageHelper.Create(opCode, packet.ToBytes());
+            var msg = new Message(opCode, packet.ToBytes());
             Peer.SendMessage(msg, responseCallback, timeoutSecs);
         }
 
 
         public void SendMessage(short opCode, ResponseCallback responseCallback)
         {
-            var msg = MessageHelper.Create(opCode);
+            var msg = new Message(opCode);
             SendMessage(msg, responseCallback);
         }
 
         public void SendMessage(short opCode, byte[] data)
         {
-            SendMessage(opCode, data, DeliveryMethod.Reliable);
-        }
-
-        public void SendMessage(short opCode, byte[] data, DeliveryMethod method)
-        {
-            var msg = MessageHelper.Create(opCode, data);
-            Peer.SendMessage(msg, method);
+            SendMessage(opCode, data);
         }
 
         public void SendMessage(short opCode, byte[] data, ResponseCallback responseCallback)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, data);
             Peer.SendMessage(msg, responseCallback);
         }
 
         public void SendMessage(short opCode, byte[] data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, data);
             Peer.SendMessage(msg, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(short opCode, string data)
         {
-            SendMessage(opCode, data, DeliveryMethod.Reliable);
-        }
-
-        public void SendMessage(short opCode, string data, DeliveryMethod method)
-        {
-            var msg = MessageHelper.Create(opCode, data);
-            Peer.SendMessage(msg, method);
+            SendMessage(opCode, data);
         }
 
         public void SendMessage(short opCode, string data, ResponseCallback responseCallback)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, MessagePackSerializer.Serialize(data));
             Peer.SendMessage(msg, responseCallback);
         }
 
         public void SendMessage(short opCode, string data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, MessagePackSerializer.Serialize(data));
             Peer.SendMessage(msg, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(short opCode, int data)
         {
-            SendMessage(opCode, data, DeliveryMethod.Reliable);
-        }
-
-        public void SendMessage(short opCode, int data, DeliveryMethod method)
-        {
-            var msg = MessageHelper.Create(opCode, data);
-            Peer.SendMessage(msg, method);
+            SendMessage(opCode, data);
         }
 
         public void SendMessage(short opCode, int data, ResponseCallback responseCallback)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, MessagePackSerializer.Serialize(data));
             Peer.SendMessage(msg, responseCallback);
         }
 
         public void SendMessage(short opCode, int data, ResponseCallback responseCallback, int timeoutSecs)
         {
-            var msg = MessageHelper.Create(opCode, data);
+            var msg = new Message(opCode, MessagePackSerializer.Serialize(data));
             Peer.SendMessage(msg, responseCallback, timeoutSecs);
         }
 
         public void SendMessage(IMessage message)
         {
-            SendMessage(message, DeliveryMethod.Reliable);
-        }
-
-        public void SendMessage(IMessage message, DeliveryMethod method)
-        {
-            Peer.SendMessage(message, method);
+            SendMessage(message);
         }
 
         public void SendMessage(IMessage message, ResponseCallback responseCallback)

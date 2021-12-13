@@ -1,6 +1,7 @@
 ﻿using DotNetty.Buffers;
 using dotNetty_kcp;
 using fec;
+using Pea.Networking.App;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +16,8 @@ namespace Pea.Networking.Servers
         public event PeerActionHandler OnConnected;
         public event PeerActionHandler Disconnected;
         public event PeerActionHandler OnDisconnected;
-
+        private KcpServer kcpServer;
+        private Dictionary<User, PeerKcp> peers;
         public Task Listen(int port)
         {
             ChannelConfig channelConfig = new ChannelConfig();
@@ -28,24 +30,21 @@ namespace Pea.Networking.Servers
             channelConfig.AckNoDelay = true;
             channelConfig.TimeoutMillis = 10000;
             channelConfig.UseConvChannel = true;
-            KcpServer kcpServer = new KcpServer();
+            kcpServer = new KcpServer();
             kcpServer.init(Environment.ProcessorCount, this, channelConfig, 20003);
             return Task.CompletedTask;
         }
 
         public void onConnected(Ukcp ukcp)
         {
-
+            peers.Add(ukcp.user(), new PeerKcp(ukcp));
         }
 
         public void handleReceive(IByteBuffer byteBuf, Ukcp ukcp)
         {
-            short curCount = byteBuf.GetShort(byteBuf.ReaderIndex);
-
-            ukcp.write(byteBuf);
-            if (curCount == -1)
+            if (peers.TryGetValue(ukcp.user(), out PeerKcp peer))
             {
-                ukcp.close();
+                peer.HandleDataReceived(byteBuf.Array, 0);
             }
         }
 
@@ -60,9 +59,10 @@ namespace Pea.Networking.Servers
             Snmp.snmp = new Snmp();
         }
 
-        public async Task Stop()
+        public Task Stop()
         {
-            throw new NotImplementedException();
+            kcpServer.stop();
+            return Task.CompletedTask;
         }
     }
 }

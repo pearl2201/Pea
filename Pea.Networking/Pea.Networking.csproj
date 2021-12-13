@@ -10,6 +10,7 @@
     <PackageReference Include="MessagePack" Version="2.3.85" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\libs\csharp-kep\base-kcp\base-kcp.csproj" />
     <ProjectReference Include="..\libs\csharp-kep\dotNetty-kcp\dotNetty-kcp.csproj" />
     <ProjectReference Include="..\libs\DotNettySocket\DotNettySocket.csproj" />
   </ItemGroup>

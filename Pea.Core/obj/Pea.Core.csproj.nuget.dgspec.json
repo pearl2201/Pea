@@ -1,17 +1,252 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\Pea.Core\\Pea.Core.csproj": {}
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Core\\Pea.Core.csproj": {}
   },
   "projects": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\Pea.Core\\Pea.Core.csproj": {
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.Core\\Pea.Core.csproj",
-        "projectName": "Pea.Core",
-        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.Core\\Pea.Core.csproj",
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectName": "base-kcp",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Pea.Core\\obj\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "DotNetty.Buffers": {
+              "target": "Package",
+              "version": "[0.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
+        "projectName": "dotNetty-kcp",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "DotNetty.Buffers": {
+              "target": "Package",
+              "version": "[0.7.0, )"
+            },
+            "DotNetty.Common": {
+              "target": "Package",
+              "version": "[0.7.0, )"
+            },
+            "DotNetty.Transport": {
+              "target": "Package",
+              "version": "[0.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\DotNettySocket.csproj": {
+      "version": "1.2.0",
+      "restore": {
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\DotNettySocket.csproj",
+        "projectName": "DotNettySocket",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\DotNettySocket.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "DotNetty.Codecs": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Codecs.Http": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Common": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Transport": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "DotNetty.Codecs": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Codecs.Http": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Common": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "DotNetty.Transport": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Core\\Pea.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Core\\Pea.Core.csproj",
+        "projectName": "Pea.Core",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Core\\Pea.Core.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +262,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\Pea.Networking.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\Pea.Networking.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -54,6 +293,89 @@
               "privateAssets": "all"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\Pea.Networking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\Pea.Networking.csproj",
+        "projectName": "Pea.Networking",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\Pea.Networking.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\Pea.Networking\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj"
+              },
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj"
+              },
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\DotNettySocket.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\DotNettySocket\\DotNettySocket.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "MessagePack": {
+              "target": "Package",
+              "version": "[2.3.85, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }

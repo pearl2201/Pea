@@ -1,4 +1,6 @@
-﻿using dotNetty_kcp;
+﻿using DotNetty.Buffers;
+using dotNetty_kcp;
+using MessagePack;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,13 +17,15 @@ namespace Pea.Networking.App
         }
 
 
-        public override bool IsConnected => throw new NotImplementedException();
+        public override bool IsConnected => _ukcp.isActive();
 
 
         public override void SendMessage(IMessage message)
         {
             var bytes = message.ToBytes();
-            _ukcp.write(bytes);
+            var buffer = Unpooled.Buffer();
+            buffer.WriteBytes(bytes);
+            _ukcp.write(buffer);
         }
 
         public override void Disconnect(string reason)
@@ -35,7 +39,7 @@ namespace Pea.Networking.App
 
             try
             {
-                message = MessageHelper.FromBytes(buffer, start, this);
+                message = MessagePackSerializer.Deserialize<IIncommingMessage>(buffer);
 
                 if (message.AckRequestId.HasValue)
                 {
@@ -51,7 +55,7 @@ namespace Pea.Networking.App
                     throw e;
 #endif
 
-                Log.Error("Failed parsing an incomming message: " + e);
+                Serilog.Log.Error("Failed parsing an incomming message: " + e);
 
                 return;
             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {}
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {}
   },
   "projects": {
-    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "projectName": "base-kcp",
-        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\obj\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,7 +42,7 @@
           "dependencies": {
             "DotNetty.Buffers": {
               "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.7.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {
+    "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
+        "projectUniqueName": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
         "projectName": "dotNetty-kcp",
-        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
+        "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\dotNetty-kcp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\dotNetty-kcp\\obj\\",
+        "outputPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\dotNetty-kcp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
-                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj"
+              "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj": {
+                "projectPath": "D:\\Ann\\Dev\\Projects\\Pea\\Src\\Pea.Server\\libs\\csharp-kep\\base-kcp\\base-kcp.csproj"
               }
             }
           }
@@ -105,21 +105,17 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
-            "DotNetty.Codecs": {
+            "DotNetty.Buffers": {
               "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.7.0, )"
             },
             "DotNetty.Common": {
               "target": "Package",
-              "version": "[0.6.0, )"
-            },
-            "DotNetty.Handlers": {
-              "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.7.0, )"
             },
             "DotNetty.Transport": {
               "target": "Package",
-              "version": "[0.6.0, )"
+              "version": "[0.7.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

@@ -13,7 +13,6 @@ namespace Pea.Networking
 
         void SendMessage(short opCode);
         void SendMessage(short opCode, ISerializablePacket packet);
-        void SendMessage(short opCode, ISerializablePacket packet, DeliveryMethod method);
         void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback);
         void SendMessage(short opCode, ISerializablePacket packet, ResponseCallback responseCallback, int timeoutSecs);
 
